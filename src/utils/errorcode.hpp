@@ -4,6 +4,7 @@
 
 #ifndef PRO1_ERRORCODE_HPP
 #define PRO1_ERRORCODE_HPP
+
 #include <cstdint>
 typedef int8_t ERRCODE;
 

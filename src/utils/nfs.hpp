@@ -47,10 +47,10 @@ statPtr     post(       char*);
 class nfs
 {
 protected:
-    /* data */
+            statPtr    start;
 public:
-    nfs(/* args */);
-    ~nfs();
+            nfs(       statPtr);
+            ~nfs();
 };
 
 

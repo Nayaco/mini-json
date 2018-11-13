@@ -14,29 +14,10 @@ void expand(statSet& set)
     while(setliter->next != NULL){
         setliter = setliter->next;
     }
-    setliter->next = (statPtr)malloc()
 }
 void push(statSet& set, Nstat &stat)
 {
     if(set.len == L_LEN){
         
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-nfs::nfs(/* args */)
-{
-}
-
-nfs::~nfs()
-{
 }
