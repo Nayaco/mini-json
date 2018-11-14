@@ -3,7 +3,7 @@
 //
 
 #include "kvcast.hpp"
-#include "utils/to.cpp"
+#include "toEx/to.hpp"
 #include <cstring>
 #include <typeinfo>
 #include <typeindex>
@@ -37,7 +37,12 @@ auto KV::getattr_s(const std::string& key)->const kvcast&
 
 auto KV::setattr(std::string key, std::any value, std::type_info type)->bool
 {
-    to
-    if(bodyCast.find())
+    
+    if(bodyCast.find(key) == bodyCast.end()){
+        body[bodySize++] = new kvcast;
+        bodyCast[key] = body[bodySize - 1];
+        
+        
+    }
 } 
 

@@ -1,8 +1,14 @@
 //
 // to.js-to.cpp
 //
-#ifndef TO_CPP
-#define TO_CPP
+
+/** 
+ * Tie a function to try...catch...
+ * Return with 2 params (err, value)
+ * If no error occurs err should be 0x00
+ */
+#ifndef TO_HPP
+#define TO_HPP
 
 #include <functional>
 #include <cstdint>
