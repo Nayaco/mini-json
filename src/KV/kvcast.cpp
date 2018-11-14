@@ -35,13 +35,12 @@ auto KV::getattr_s(const std::string& key)->const kvcast&
     return *kv0;
 }
 
-auto KV::setattr(std::string key, std::any value, std::type_info type)->bool
+auto KV::setattr(std::string __key, void* __value, size_t __size, size_t __type)->bool
 {
-    
     if(bodyCast.find(key) == bodyCast.end()){
         body[bodySize++] = new kvcast;
         bodyCast[key] = body[bodySize - 1];
-        
+    }else{
         
     }
 } 

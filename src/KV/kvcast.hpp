@@ -2,6 +2,7 @@
 #define ZJSON
 
 #include <map>
+#include <tuple>
 #include <cstdint>
 
 #define K_LEN       8
@@ -25,8 +26,8 @@ public:
     KV(const KV&);
     ~KV();
     virtual     auto    getattr(const std::string&)->kvcast&;
-    virtual     auto    getattr_s(const std::string&)->const kvcast&;
-    virtual     auto    setattr(std::string, std::any, std::type_info)->bool;
+    virtual     auto    getattr_s(const std::string)-> std::tuple<kvcast&, >;
+    virtual     auto    setattr(std::string, void*, size_t, size_t)->void;
 };
 
 #endif
