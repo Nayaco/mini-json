@@ -4,6 +4,7 @@
 #include <map>
 #include <tuple>
 #include <cstdint>
+#include "toEx/errorcode.hpp"
 
 #define K_LEN       8
 #define L_LEN       1024
@@ -26,7 +27,7 @@ public:
     KV(const KV&);
     ~KV();
     virtual     auto    getattr(const std::string&)->kvcast&;
-    virtual     auto    getattr_s(const std::string)-> std::tuple<kvcast&, >;
+    virtual     auto    getattr_s(const std::string)-> std::tuple<ERRCODE, kvcast&>;
     virtual     auto    setattr(std::string, void*, size_t, size_t)->void;
 };
 

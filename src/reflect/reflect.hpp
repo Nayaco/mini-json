@@ -12,7 +12,7 @@ template<class R, class ...T>
 class Reflect{
 public:
     static   Reflect    &getInstance();
-    virtual  auto        regObject(const std::string, std::function<R(T...)>) -> bool;
+    virtual  auto        regObject(const std::string, std::function<R(ERRCODE&, T...)>) -> bool;
     virtual  auto        getObject(const std::string, T ...args) -> std::tuple<ERRCODE, R>;
 protected:
     std::map<std::string, std::function<R(T...)> >  objectPool;
@@ -36,7 +36,7 @@ Reflect<R, T...>& Reflect<R, T...>::getInstance()
 }
 
 template<class R, class ...T>
-auto Reflect<R, T...>::regObject(const std::string key, std::function<R(T...)> func)->bool
+auto Reflect<R, T...>::regObject(const std::string key, std::function<R(ERRCODE&, T...)> func)->bool
 {
     if(objectPool.find(key) != objectPool.end())return false;
         else objectPool[key] = func;
