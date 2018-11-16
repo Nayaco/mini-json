@@ -17,12 +17,13 @@
 #include "errorcode.hpp"
 
 template<typename RV, typename ...T>
-std::tuple<ERRCODE, RV> to(std::function<RV(T ...args)> func, T ...args){
+std::tuple<ERRCODE, RV> to(std::function<RV(ERRCODE&, T ...args)> func, T ...args){
     try{    
-        RV value = func(args...);
-        return std::make_tuple(SUCCESS, value);
+        ERRCODE err = SUCCESS;
+        RV value = func(err, args...);
+        return std::make_tuple(err, value);
     }catch(const std::exception &e){
-        return std::make_tuple(UNKNOWERR, NULL);
+        throw e;
     }
 }
 
