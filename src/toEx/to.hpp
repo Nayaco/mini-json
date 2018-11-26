@@ -1,12 +1,10 @@
 //
-// to.js-to.cpp
+// to.js-toException
 //
 
-/** 
- * Tie a function to try...catch...
- * Return with 2 params (err, value)
- * If no error occurs err should be 0x00
- */
+///'TO' ties a function to try...catch...
+///Return with 2 params (err, value)
+/// If no error occurs err should be 0x00
 #ifndef TO_HPP
 #define TO_HPP
 
